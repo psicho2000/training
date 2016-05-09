@@ -9,3 +9,7 @@
 
 ## Run program
  * enable assertions (Run Configurations > Arguments: VM argument = -ea)
+ * Main
+   - application.demo.HelloWorldMain
+   - mvccompliant.controller.MvcMain
+ 
