@@ -6,10 +6,9 @@
 <?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="198.0" prefWidth="248.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1"
-    fx:controller="application.SimpleController">
+<AnchorPane prefHeight="198.0" prefWidth="248.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.demo.SimpleController">
     <children>
-        <Label layoutX="22.0" layoutY="14.0" prefHeight="17.0" prefWidth="35.0" text="Hello World!" />
+        <Label layoutX="9.0" layoutY="14.0" prefHeight="17.0" prefWidth="73.0" text="Hello World!" />
         <Button fx:id="button1" layoutX="14.0" layoutY="46.0" mnemonicParsing="false" text="Button 1">
             <effect>
                 <Blend>
