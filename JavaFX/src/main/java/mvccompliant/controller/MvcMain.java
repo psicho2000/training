@@ -18,7 +18,7 @@ public class MvcMain extends Application {
             final Parent root = fxmlLooader.load();
 
             Scene scene = new Scene(root);
-            // scene.getStylesheets().add(this.getClass().getResource("application.css").toExternalForm());
+            scene.getStylesheets().add(this.getClass().getResource("../view/application.css").toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.setTitle("MVC Example");
             primaryStage.show();
