@@ -6,11 +6,11 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class HelloWorldMain extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            AnchorPane page = (AnchorPane) FXMLLoader.load(Main.class.getResource("MainGUI.fxml"));
+            AnchorPane page = (AnchorPane) FXMLLoader.load(HelloWorldMain.class.getResource("MainGUI.fxml"));
             Scene scene = new Scene(page);
             primaryStage.setScene(scene);
             primaryStage.setTitle("FXML is Simple");

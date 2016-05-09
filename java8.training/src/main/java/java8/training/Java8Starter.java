@@ -1,6 +1,6 @@
 package java8.training;
 
-public class MainStarter {
+public class Java8Starter {
 
     public static void main(String[] args) {
         LambdaTrainer lt = new LambdaTrainer();
