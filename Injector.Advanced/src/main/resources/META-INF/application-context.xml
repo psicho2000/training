@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+    <!-- Old style -->
+    <bean id="bBeanOldStyle" class="de.psicho.Injector.Advanced.OldStyle.DemoB" />
+    <bean id="cBeanOldStyle" class="de.psicho.Injector.Advanced.OldStyle.DemoC" />
+    <bean id="aBeanOldStyle" class="de.psicho.Injector.Advanced.OldStyle.DemoA">
+        <property name="bbb" ref="bBeanOldStyle" />
+        <property name="ccc" ref="cBeanOldStyle" />
+    </bean>
+    
+    <!--  Annotation config -->
+    <context:annotation-config />
+    <bean id="bBeanAnnotationConfig" class="de.psicho.Injector.Advanced.AnnotationConfig.DemoB" />
+    <bean id="cBeanAnnotationConfig" class="de.psicho.Injector.Advanced.AnnotationConfig.DemoC" />
+    <bean id="aBeanAnnotationConfig" class="de.psicho.Injector.Advanced.AnnotationConfig.DemoA" />
+    
+    <!-- Component scan -->
+    <context:component-scan base-package="de.psicho.Injector.Advanced.ComponentScan" />
+    <alias name="${content.generator}" alias="ContentService"/>
+   
+</beans>
