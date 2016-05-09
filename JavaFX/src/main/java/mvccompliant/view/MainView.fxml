@@ -1,22 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.AmbientLight?>
+<?import javafx.scene.PointLight?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.Blend?>
-<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Cylinder?>
 
-<AnchorPane prefHeight="250.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Label layoutX="9.0" layoutY="14.0" prefHeight="17.0" prefWidth="184.0" text="MVC Compliant Application" />
-        <Button fx:id="button1" layoutX="14.0" layoutY="46.0" mnemonicParsing="false" text="Button 1">
-            <effect>
-                <Blend>
-                    <topInput>
-                        <Reflection />
-                    </topInput>
-                </Blend>
-            </effect>
-        </Button>
+      <Pane fx:id="pane3D" layoutX="14.0" layoutY="109.0" prefHeight="277.0" prefWidth="470.0">
+         <children>
+            <PointLight fx:id="light1" color="CHARTREUSE" layoutX="48.0" layoutY="203.0" lightOn="true" />
+            <AmbientLight fx:id="light2" color="CHARTREUSE" layoutX="374.0" layoutY="50.0" lightOn="true" />
+            <Cylinder fx:id="cylinder" height="200.0" layoutX="235.0" layoutY="139.0" radius="50.0" rotate="-36.9">
+               <rotationAxis>
+                  <Point3D x="0.5" y="0.5" z="0.5" />
+               </rotationAxis>
+            </Cylinder>
+            <Circle fx:id="circleLight1" fill="DODGERBLUE" layoutX="48.0" layoutY="203.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="circleLight2" fill="#ff6c1f" layoutX="374.0" layoutY="50.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+         </children>
+      </Pane>
+      <Button fx:id="buttonLight1" layoutX="512.0" layoutY="115.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" text="Toogle Light 1" />
+      <Button fx:id="buttonLight2" layoutX="512.0" layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" text="Toogle Light 2" />
+      <Slider fx:id="sliderY" layoutX="484.0" layoutY="109.0" orientation="VERTICAL" prefHeight="271.0" prefWidth="14.0" />
+      <Slider fx:id="sliderX" layoutX="14.0" layoutY="379.0" prefHeight="14.0" prefWidth="470.0" />
+      <Label layoutX="509.0" layoutY="209.0" text="Sliders control" />
+      <RadioButton fx:id="selectLight1" layoutX="512.0" layoutY="228.0" mnemonicParsing="false" selected="true" style="-fx-mark-highlight-color: #1e90ff; -fx-mark-color: #1e90ff;" text="Light 1">
+         <toggleGroup>
+            <ToggleGroup fx:id="sliderToggle" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="selectLight2" layoutX="512.0" layoutY="248.0" mnemonicParsing="false" style="-fx-mark-highlight-color: #ff6c1f; -fx-mark-color: #ff6c1f;" text="Light 2" toggleGroup="$sliderToggle" />
     </children>
 </AnchorPane>
