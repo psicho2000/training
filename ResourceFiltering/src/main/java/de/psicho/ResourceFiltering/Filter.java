@@ -5,13 +5,12 @@ import java.util.Properties;
 
 public class Filter {
     Properties prop;
-    
+
     public void perform() {
         loadProperties();
-        
+
         System.out.println(prop.getProperty("myProperty"));
-        System.out.println(prop.getProperty("application.groupId") + '.' 
-                + prop.getProperty("application.artifactId") + '-' 
+        System.out.println(prop.getProperty("application.groupId") + '.' + prop.getProperty("application.artifactId") + '-'
                 + prop.getProperty("application.version"));
     }
 
