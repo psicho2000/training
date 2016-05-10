@@ -6,4 +6,3 @@ Kommandozeile:
     mvn -P second process-resources
 Dann enthält target\classes\app.properties die gefilterten Ressourcen.
 
-Testinhalt 
