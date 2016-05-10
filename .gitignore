@@ -1,4 +1,6 @@
 /**/target/
 /**/delivery/
 /**/.settings/
-
+.metadata/
+.recommenders/
+RemoteSystemsTempFiles
