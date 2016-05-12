@@ -3,6 +3,9 @@ package java8.training;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
+
+import com.google.common.collect.Lists;
 
 public class LambdaTrainer {
     public void lambdarize() {
@@ -12,7 +15,10 @@ public class LambdaTrainer {
     }
 
     private void compareIt() {
-        ArrayList<String> strList = new ArrayList<String>(Arrays.asList("Buenos Aires", "Córdoba", "La Plata"));
+        final List<String> strList = Arrays.asList("Buenos Aires", "Córdoba", "La Plata"); // unveränderlich
+        List<String> strList2 = new ArrayList<String>(Arrays.asList("Buenos Aires", "Córdoba", "La Plata")); // veränderlich
+        List<String> strList3 = Lists.newArrayList("str1", "str2", "str3"); // Google Guava, veränderlich
+
         Comparator<String> comp = (final String str1, final String str2) -> {
             return Integer.compare(str1.length(), str2.length());
         };
