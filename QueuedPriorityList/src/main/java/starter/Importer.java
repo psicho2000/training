@@ -31,7 +31,7 @@ public class Importer {
             } else {
                 WrappedEntity we = new WrappedEntity();
                 we.setEntity(entity);
-                we.setNumberOfParents(entity.getParents().size());
+                we.setNumberOfUnsavedParents(entity.getParents().size());
                 backlogEntities.put(entity.getId(), we);
             }
         }
@@ -44,7 +44,7 @@ public class Importer {
                 for (Entity child : entity.getChildren()) {
                     WrappedEntity we = backlogEntities.get(child.getId());
                     we.decrease();
-                    if (we.getNumberOfParents() == 0) {
+                    if (we.getNumberOfUnsavedParents() == 0) {
                         rootEntities.push(we.getEntity());
                         backlogEntities.remove(we.getEntity().getId());
                     }
