@@ -105,12 +105,12 @@ class Entity {
 @Setter
 class WrappedEntity {
     public void decrease() {
-        if (numberOfParents == 0) {
+        if (numberOfUnsavedParents == 0) {
             throw new RuntimeException("Cannot decrease, number of elements is already 0.");
         }
-        numberOfParents--;
+        numberOfUnsavedParents--;
     }
 
-    private int numberOfParents = 0;
+    private int numberOfUnsavedParents = 0;
     private Entity entity;
 }
