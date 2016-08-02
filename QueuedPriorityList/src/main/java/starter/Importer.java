@@ -26,7 +26,7 @@ public class Importer {
 
         // initialize rootList and backlogList
         for (Entity entity : entities) {
-            if (entity.getParents() == null || entity.getParents().size() == 0) {
+            if ((entity.getParents() == null) || (entity.getParents().size() == 0)) {
                 rootEntities.push(entity);
             } else {
                 WrappedEntity we = new WrappedEntity();
@@ -76,10 +76,11 @@ public class Importer {
         grandHeir.addParent(p4).addParent(l1ChildA);
         l1ChildA.addParent(rootParent2).addParent(rootParent1);
         p3.addParent(l1ChildB);
-        l1ChildB.addParent(rootParent2).addParent(p2);
+        l1ChildB.addParent(rootParent1).addParent(p2);
 
         // add entities
-        Set<Entity> result = Sets.newHashSet(rootLeaf1, p1, p4, rootParent2, p3, rootLeaf2, p2, rootParent1, grandHeir, l1ChildA, l1ChildB);
+        Set<Entity> result =
+            Sets.newHashSet(rootLeaf1, p1, p4, rootParent2, p3, rootLeaf2, p2, rootParent1, grandHeir, l1ChildA, l1ChildB);
 
         return result;
     }
@@ -90,6 +91,7 @@ public class Importer {
 @Setter
 @RequiredArgsConstructor
 class Entity {
+
     private final String id;
     private Set<Entity> parents = Sets.newHashSet();
     private Set<Entity> children = Sets.newHashSet();
@@ -104,6 +106,7 @@ class Entity {
 @Getter
 @Setter
 class WrappedEntity {
+
     public void decrease() {
         if (numberOfUnsavedParents == 0) {
             throw new RuntimeException("Cannot decrease, number of elements is already 0.");
