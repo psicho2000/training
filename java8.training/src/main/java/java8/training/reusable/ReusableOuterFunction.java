@@ -41,7 +41,7 @@ public class ReusableOuterFunction {
     }
 
     // Example 2
-    static <S extends DomainObject, T extends DomainObject> Set<T> reuse2(Set<S> sources, Function<S, T> innerFunc) {
+    static <S, T> Set<T> reuse2(Set<S> sources, Function<S, T> innerFunc) {
         return sources.stream().map(x -> innerFunc.apply(x)).collect(Collectors.toSet());
     }
 
