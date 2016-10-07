@@ -1,4 +1,4 @@
-package java8.training;
+package java8.training.general;
 
 @FunctionalInterface
 public interface Calculator {

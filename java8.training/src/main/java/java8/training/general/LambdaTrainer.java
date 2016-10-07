@@ -1,4 +1,4 @@
-package java8.training;
+package java8.training.general;
 
 import java.util.ArrayList;
 import java.util.Arrays;
