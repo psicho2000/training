@@ -42,7 +42,7 @@ public class ReusableOuterFunction {
 
     // Example 2
     private <S, T> Set<T> convertSet2(Set<S> sources, Function<S, T> converter) {
-        return sources.stream().map(x -> converter.apply(x)).collect(Collectors.toSet());
+        return sources.stream().map(converter::apply).collect(Collectors.toSet());
     }
 
     private Target1 convertS1ToT1(Source1 s) {
