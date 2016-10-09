@@ -16,22 +16,22 @@ public class ReusableOuterFunction {
 
         // Example 1 - reuse1
         System.out.println("Example 1");
-        Set<Target1> result1 = reuse1(sources, x -> myFunc(x));
+        Set<Target1> result1 = convertSet1(sources, this::convertS1ToT1);
         result1.forEach(t -> System.out.println(t.id));
 
         // Example 2 - reuse2 - IMHO best alternative
         System.out.println("Example 2");
-        Set<Target1> result3 = reuse2(sources, x -> myFunc(x));
+        Set<Target1> result3 = convertSet2(sources, this::convertS1ToT1);
         result3.forEach(t -> System.out.println(t.id));
 
         // Example 3 - directly
         System.out.println("Example 3");
-        Set<Target1> result2 = (Set<Target1>) sources.stream().map(x -> myFunc(x)).collect(Collectors.toSet());
+        Set<Target1> result2 = (Set<Target1>) sources.stream().map(this::convertS1ToT1).collect(Collectors.toSet());
         result2.forEach(t -> System.out.println(t.id));
     }
 
     // Example 1
-    static <S extends DomainObject, T extends DomainObject> Set<T> reuse1(Set<S> sources, Function<S, T> innerFunc) {
+    private <S extends DomainObject, T extends DomainObject> Set<T> convertSet1(Set<S> sources, Function<S, T> innerFunc) {
         Set<T> result = new HashSet<>();
         for (S source : sources) {
             DomainObject target = innerFunc.apply(source);
@@ -41,11 +41,11 @@ public class ReusableOuterFunction {
     }
 
     // Example 2
-    static <S, T> Set<T> reuse2(Set<S> sources, Function<S, T> innerFunc) {
-        return sources.stream().map(x -> innerFunc.apply(x)).collect(Collectors.toSet());
+    private <S, T> Set<T> convertSet2(Set<S> sources, Function<S, T> converter) {
+        return sources.stream().map(x -> converter.apply(x)).collect(Collectors.toSet());
     }
 
-    public Target1 myFunc(Source1 s) {
+    private Target1 convertS1ToT1(Source1 s) {
         Target1 t = new Target1(s.id);
         return t;
     }

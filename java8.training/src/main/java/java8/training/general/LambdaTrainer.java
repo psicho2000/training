@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.BiFunction;
 
 import com.google.common.collect.Lists;
 
@@ -32,6 +33,9 @@ public class LambdaTrainer {
 
         Calculator calc = (x, y) -> x * y;
         System.out.println(calc.calc(a, b));
+
+        BiFunction<Integer, Integer, Integer> calc2 = (x, y) -> x * y;
+        System.out.println(calc2.apply(a, b));
     }
 
     private void runner() {
