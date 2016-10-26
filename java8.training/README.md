@@ -48,6 +48,7 @@
  * `Stream.generate(...)`
  * `IntStream.range(...)`
  * `IntStream.iterate(...)`
+ * `StreamSupport.stream(iter.spliterator(), false)` where the last argument would be true for a parallel stream
 
 ### Intermediate operations (stateless)
  * `filter()`
