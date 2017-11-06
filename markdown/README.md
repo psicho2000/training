@@ -6,16 +6,19 @@
         1. [ATX heading level 3](#atx-heading-level-3)
 2. [Setext heading level 1](#setext-heading-level-1)
     1. [Setext heading level 2](#setext-heading-level-2)
-3. [Tables](#tables)
+3. [Misc](#misc)
+    1. [Horizontal rule](#horizontal-rule)
+4. [Tables](#tables)
     1. [Simple table](#simple-table)
     2. [Using alignments](#using-alignments)
-4. [Text emphasis](#text-emphasis)
+5. [Text emphasis](#text-emphasis)
     1. [Bold, italic, strikethrough](#bold-italic-strikethrough)
     2. [Plugin specific - underline, subscript, superscript](#plugin-specific---underline-subscript-superscript)
     3. [Code](#code)
         1. [Code block](#code-block)
+        2. [Code highlighting](#code-highlighting)
     4. [Citation](#citation)
-5. [Lists](#lists)
+6. [Lists](#lists)
     1. [Bullet points, type 1](#bullet-points-type-1)
     2. [Bullet points, type 2](#bullet-points-type-2)
     3. [Bullet points, mixed type](#bullet-points-mixed-type)
@@ -33,6 +36,16 @@ Setext heading level 1
 ======================
 Setext heading level 2
 --------
+
+# Misc
+
+### Horizontal rule
+
+Before rule
+
+----
+
+After rule
 
 # Tables
 
@@ -82,6 +95,21 @@ inlined `code`
 ```
 code for
 dummies 
+```
+
+### Code highlighting
+
+``` ruby
+# The Greeter class
+class Greeter
+  def initialize(name)
+    @name = name.capitalize
+  end
+
+  def salute
+    puts "Hello #{@name}!"
+  end
+end
 ```
 
 ## Citation

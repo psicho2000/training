@@ -32,6 +32,7 @@
 * feature richness
 * side-by-side view of rendered file
 * smart edit with more functionality (bold, strikeout, subscript in addition to italic)
+* Code highlighting in code blocks
 
 ## Cons
 
