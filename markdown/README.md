@@ -95,12 +95,16 @@ Let's cite:
 ## Bullet points, type 1
 
 - one
-- two1
+  - a
+  - b
+- two
 
 ## Bullet points, type 2
 
 * three
 * four
+  * 5
+  * 6
 
 ## Bullet points, mixed type
 
@@ -109,6 +113,7 @@ Let's cite:
   - hi
     * yo
     * yeah
+  - ho
 
 ## Ordered lists, mixed
 
