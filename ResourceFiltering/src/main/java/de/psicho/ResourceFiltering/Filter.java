@@ -15,9 +15,8 @@ public class Filter {
     }
 
     private void loadProperties() {
-        InputStream is = getClass().getResourceAsStream("/app.properties");
         prop = new Properties();
-        try {
+        try(InputStream is = getClass().getResourceAsStream("/app.properties")) {
             prop.load(is);
         } catch (Exception e) {
             System.out.println(e);
