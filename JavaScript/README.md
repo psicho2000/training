@@ -2,6 +2,7 @@
 | Technology | Description
 | ---        | ---
 | ECMAScript | ISO standard for JS
+| ESLint     | Linter (Coding Standard checker)
 | grunt      | JS task runner (minification, compiliation, testing, linting); tasks defined by config
 | gulp       | JS task runner; newer & faster; tasks defined by code
 | npm        | maven for JS; part of nodejs
