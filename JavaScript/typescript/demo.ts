@@ -1,6 +1,6 @@
 interface Person {
-    firstName: string;
-    lastName: string;
+    firstName: string | undefined;
+    lastName: string | undefined;
 }
 
 class Student {
@@ -11,13 +11,13 @@ class Student {
 }
 
 class MyStudent implements Person {
-    firstName: string;
-    lastName: string;
-    middleName: string;
+    firstName: string | undefined;
+    lastName: string | undefined;
+    middleName: string | undefined;
 }
 
 class YoungStudent extends Student {
-    age: number;
+    age: number | undefined;
 }
 
 function greetPerson(person: Person) {
