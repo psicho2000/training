@@ -8,6 +8,8 @@
  * 4. Call using `cat inputfile | ./ShebangExample`
  * Editing
  * In vi, setting `:set syntax=java` helps as we have no file extension
+ * Resources
+ * https://blog.codefx.org/java/scripting-java-shebang/
  */
 
 import java.io.BufferedReader;
