@@ -28,10 +28,11 @@ public class ShebangExample {
 
     private static Stream<String> readInput() throws IOException {
         var reader = new BufferedReader(new InputStreamReader(System.in));
-        if (!reader.ready())
+        if (!reader.ready()) {
             return Stream.empty();
-        else
+        } else {
             return reader.lines();
+        }
     }
 
     private static Stream<String> modifyStream(String arg, Stream<String> input) {
